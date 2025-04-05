@@ -2,6 +2,14 @@
 
 This repository contains a QMK firmware implementation for the DOIO KBGMH11 keyboard, referred to here as OpenH11. The specific keyboard definition is located within the `keyboards/open_h11/` directory.
 
+## Main Features
+
+This firmware aims to provide an open-source alternative for the DOIO KBGM-H11, enabling features and customizations available through QMK. Key features include:
+
+*   **OLED Screen Modification:** Prevent OLED Burn-in. Allows customization of the OLED display content. 
+*   **Low Latency:** Configured for a 1000Hz polling rate and utilizes QMK's debounce algorithms for responsiveness. [ref](https://michael.stapelberg.ch/posts/2021-05-08-keyboard-input-latency-qmk-kinesis/)
+*   **Fully Open Source:** Leverages the QMK framework, allowing users to implement any QMK feature, customize keymaps, and contribute to the project.
+
 ## WARNING: Flashing Risks
 
 **Flashing custom firmware can potentially brick your keyboard.** If the flashing process fails or overwrites the STM32duino bootloader, you might be unable to enter bootloader mode again via standard methods.
@@ -12,13 +20,6 @@ This repository contains a QMK firmware implementation for the DOIO KBGMH11 keyb
 
 **Proceed with caution and at your own risk.**
 
-## Main Features
-
-This firmware aims to provide an open-source alternative for the DOIO KBGM-H11, enabling features and customizations available through QMK. Key features include:
-
-*   **OLED Screen Modification:** Allows customization of the OLED display content. (Implementation details can be found in the keyboard-specific code).
-*   **Low Latency:** Configured for a 1000Hz polling rate and utilizes QMK's debounce algorithms for responsiveness.
-*   **Fully Open Source:** Leverages the QMK framework, allowing users to implement any QMK feature, customize keymaps, and contribute to the project.
 
 ## Building the Firmware
 

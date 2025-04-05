@@ -3,31 +3,35 @@
 // OLED animation
 #include "lib/logo.h"
 
-// Default timeout for displaying boot logo.
-#ifndef OLED_LOGO_TIMEOUT
-    #define OLED_LOGO_TIMEOUT 5000
+#ifdef DEBUG
+#include "print.h"
 #endif
-
 #ifdef OLED_ENABLE
-    uint16_t startup_timer;
 
-    oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
-        startup_timer = timer_read();
 
-        return rotation;
-    }
+    static uint16_t last_oled_timer;
+    static bool first_run = true;
 
     bool oled_task_kb(void) {
-        static bool finished_logo = false;
-
-        if ((timer_elapsed(startup_timer) < OLED_LOGO_TIMEOUT) && !finished_logo) {
+        if (first_run) {
+            last_oled_timer= timer_read();
+            first_run = false;
             render_logo();
-        } else {
-            finished_logo = true;
-            if (!oled_task_user()) {
-                return false;
-            }
+            return true;
         }
-        return true;
+        else if ( oled_task_user()){
+            last_oled_timer= timer_read();
+            return true;
+        }
+
+        uint16_t elapsed = timer_elapsed(last_oled_timer);
+        if (elapsed < OLED_TIMEOUT)  {
+            uint8_t brightness = ( (uint8_t)(OLED_BRIGHTNESS* (1.0 - (float)elapsed / (float)OLED_TIMEOUT)));
+            oled_set_brightness( brightness);
+            return true;
+        } else {
+            oled_off();
+        }
+        return false;
     }
 #endif

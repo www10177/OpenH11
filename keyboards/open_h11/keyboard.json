@@ -10,7 +10,7 @@
     "lto": true
   },
   "dynamic_keymap": {
-    "layer_count": 10
+    "layer_count": 14
   },
   "features": {
     "bootmagic": true,
@@ -18,7 +18,7 @@
     "extrakey": true,
     "nkro": true,
     "oled": true,
-    "rgb_matrix": true
+    "rgb_matrix":true
   },
   "bootmagic": {
     "enabled": true,

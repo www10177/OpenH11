@@ -6,4 +6,7 @@
     #define I2C1_SCL_PIN B10
     #define I2C1_SDA_PIN B11
     #define I2C_DRIVER I2CD2
+    #define OLED_TIMEOUT 3000
 #endif
+// #define DEBUG_MATRIX_SCAN_RATE
+// #define DEBUG
