@@ -1,6 +1,6 @@
-# r01
+# OpenH11
 
-![r01](imgur.com image replace me!)
+![OpenH11](imgur.com image replace me!)
 
 *A short description of the keyboard/project*
 
@@ -10,11 +10,11 @@
 
 Make example for this keyboard (after setting up your build environment):
 
-    make r01:default
+    make open_h11:default
 
 Flashing example for this keyboard:
 
-    make r01:default:flash
+    make open_h11:default:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
