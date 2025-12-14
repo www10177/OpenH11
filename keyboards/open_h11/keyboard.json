@@ -18,7 +18,7 @@
     "extrakey": true,
     "nkro": true,
     "oled": true,
-    "rgb_matrix":true
+    "rgb_matrix": true
   },
   "bootmagic": {
     "enabled": true,
@@ -64,8 +64,10 @@
     "device_version": "0.0.1",
     "vid": "0xD010",
     "pid": "0x2202",
-    "polling_interval": 1,
-    "force_nkro": true
+    "polling_interval": 1
+  },
+  "nkro": {
+    "default": true
   },
   "ws2812": {
     "pin": "A10"
